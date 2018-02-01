@@ -1,0 +1,11 @@
+#nav-container{
+  width:100%;
+  height:60px;
+}
+#caption-img-container{
+  width:100%;
+  height:500px;
+}
+.caption{
+  margin-left: 10px;
+}
