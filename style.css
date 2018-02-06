@@ -45,3 +45,14 @@ img{
   border:1px solid var(--dark);
   margin-bottom: 50px;
 }
+
+@media (max-width:700px){
+  .info{
+    grid-template-columns: 1fr;
+  }
+  .info .btn{
+    display: block;
+    text-align: center;
+    margin auto;
+  }
+}
