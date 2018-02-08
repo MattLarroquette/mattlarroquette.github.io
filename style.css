@@ -54,6 +54,11 @@ img{
   height:60px;
 }
 @media (max-width:700px){
+  #header-content{
+    /*Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width*/
+    display:block;
+    text-align: center;
+  }
   .info{
     grid-template-columns: 1fr;
   }
