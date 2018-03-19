@@ -13,3 +13,8 @@ myBRMarker.bindPopup('Baton Rouge')
 myMapObject.on('click', function (event) {
   console.log(event.latlng + " is where you clicked on the map!")
 })
+
+var polyline = L.polyline([
+    [30, -91],
+    [29.5, -90.5]
+],{color:'red'}).addTo(myMapObject)
