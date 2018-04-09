@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+#nav{
+  width:100%;
+  height:60px;
+}
 .map{
   height:500px;
 }
