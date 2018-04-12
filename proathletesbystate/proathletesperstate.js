@@ -6,8 +6,8 @@ let grayBaseurl = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/W
 let topoBaseurl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
 let streetBaseurl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'
 
-let grayBaseLayer = L.tileLayer(topoBaseurl).addTo(myMapObject)
-let topoBaseLayer = L.tileLayer(grayBaseurl)
+let topoBaseLayer = L.tileLayer(topoBaseurl).addTo(myMapObject)
+let grayBaseLayer = L.tileLayer(grayBaseurl)
 let streetBaseLayer = L.tileLayer(streetBaseurl)
 
 let basemaps = {
