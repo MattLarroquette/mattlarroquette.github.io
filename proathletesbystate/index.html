@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Professional Athletes By State</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="finalstyles.css">
+  </head>
+  <body>
+    <div id="nav">
+      <img src="../images/logo.png" alt="logo" height="60" width="60">
+    </div>
+    <h1>Professional Athletes (all time) By State</h1>
+    <div id="myMapID" class="map"></div>
+    <div id="legend">
+      <table>
+        <tr>
+          <td><p>Legend</p></td>
+        </tr>
+        <tr>
+          <td><div id="bottom" class="rect"></div></td>
+          <td><p> < 99 total players</p></td>
+          <td><div id="fourth" class="rect"></div></td>
+          <td><p> 100-499 total players</p></td>
+          <td><div id="third" class="rect"></div></td>
+          <td><p> 500-999 total players</p></td>
+          <td><div id="second" class="rect"></div></td>
+          <td><p> 1000-2999 total players</p></td>
+          <td><div id="top" class="rect"></div></td>
+          <td><p>> 3000 total players</p></td>
+        </tr>
+        <tr>
+          <td><div><img src="footballPin.png" alt="clip art football" id="football" class="pins"></div></td>
+          <td><p>City produces <br>most NFL players</p></td>
+          <td><div><img src="basketballPin.png" alt="clip art basketball" id="basketball" class="pins"></div></td>
+          <td><p>City produces <br>most NBA players</p></td>
+          <td><div><img src="hockeyPin.png" alt="clip art hockey stick" id="hockey" class="pins"></div></td>
+          <td><p>City produces <br>most NHL players</p></td>
+          <td><div><img src="baseballPin.png" alt="clip art baseball" id="baseball" class="pins"></div></td>
+          <td><p>City produces <br>most MLB players</p></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="mapExplaination">
+      <p><b>NOTE</b>: Zoom the map in more to see the sport icons line up with their correct city, or click them to learn more (pop-up)</p>
+      <p><b>NOTE 2</b>: You can click on each state to learn more about how many players they produce total, by sport, and how they rank against the average of total player produced by state.</p>
+      <p>The above map shows the total professional athletes each state has produced all time. It is broken into five different categories as seen by the legend above. California had the most athletes produced while Alaska had the least amount of athletes. I gathered my data from sports-reference child sites <a href="https://www.pro-football-reference.com/friv/birthplaces.htm">Pro-Football Reference</a>, <a href="https://www.basketball-reference.com/friv/birthplaces.fcgi">Basketball Reference</a>, <a href="https://www.hockey-reference.com/friv/birthplaces.cgi">Hockey Reference</a>, and <a href="https://www.baseball-reference.com/bio/">Baseball Reference</a>. The compiled data can be seen <a href="files/proathletesbystateHori.pdf">here.</a></p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="statesGeoJSONproathletes.js"></script>
+    <script src="proathletesperstate.js"></script>
+  </body>
+</html>
