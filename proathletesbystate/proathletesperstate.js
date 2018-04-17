@@ -54,7 +54,7 @@ var totalAthletePin = L.icon({
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 });
-let totalAthleteMarker = L.marker([38.9072, -77.0369],{icon: totalAthletePin}).addTo(myMapObject).bindPopup('<b>Washington</b> produces the most total players per 100,000 residents in the United States.')
+let totalAthleteMarker = L.marker([38.9072, -77.0369],{icon: totalAthletePin}).addTo(myMapObject).bindPopup('<b>Washington D.C.</b> produces the most total players per 100,000 residents in the United States.')
 
 var pins = L.layerGroup([footballMarker,basketballMarker,hockeyMarker,baseballMarker,totalAthleteMarker])
 
