@@ -15,7 +15,6 @@ let basemaps = {
   'Gray Base Map': grayBaseLayer,
   'Street Base Map': streetBaseLayer
 }
-L.control.layers(basemaps).addTo(myMapObject)
 
 var footballPin = L.icon({
   iconUrl: 'footballPin.png',
@@ -23,8 +22,7 @@ var footballPin = L.icon({
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 });
-let footballMarker = L.marker([29.747289, -95.362373],{icon: footballPin}).addTo(myMapObject)
-footballMarker.bindPopup('<b>Houston</b> produces the most football players in <b>Texas</b>, which produces the most football players in the United States')
+let footballMarker = L.marker([29.747289, -95.362373],{icon: footballPin}).addTo(myMapObject).bindPopup('<b>Houston</b> produces the most football players in <b>Texas</b>, which produces the most football players in the United States')
 
 var basketballPin = L.icon({
   iconUrl: 'basketballPin.png',
@@ -32,8 +30,7 @@ var basketballPin = L.icon({
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 });
-let basketballMarker = L.marker([34.036349, -118.236045],{icon: basketballPin}).addTo(myMapObject)
-basketballMarker.bindPopup('<b>Los Angeles</b> produces the most basketball players in <b>California</b>, which produces the most basketball players in the United States')
+let basketballMarker = L.marker([34.036349, -118.236045],{icon: basketballPin}).addTo(myMapObject).bindPopup('<b>Los Angeles</b> produces the most basketball players in <b>California</b>, which produces the most basketball players in the United States')
 
 var hockeyPin = L.icon({
   iconUrl: 'hockeyPin.png',
@@ -41,8 +38,7 @@ var hockeyPin = L.icon({
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 });
-let hockeyMarker = L.marker([44.97419, -93.251284],{icon: hockeyPin}).addTo(myMapObject)
-hockeyMarker.bindPopup('<b>Minneapolis</b> produces the most hockey players in <b>Minnesota</b>, which produces the most hockey players in the United States')
+let hockeyMarker = L.marker([44.97419, -93.251284],{icon: hockeyPin}).addTo(myMapObject).bindPopup('<b>Minneapolis</b> produces the most hockey players in <b>Minnesota</b>, which produces the most hockey players in the United States')
 
 var baseballPin = L.icon({
   iconUrl: 'baseballPin.png',
@@ -50,8 +46,23 @@ var baseballPin = L.icon({
   iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
   popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 });
-let baseballMarker = L.marker([37.731987, -122.42583],{icon: baseballPin}).addTo(myMapObject)
-baseballMarker.bindPopup('<b>San Francisco</b> produces the most baseball players in <b>California</b>, which produces the most baseball players in the United States')
+let baseballMarker = L.marker([37.731987, -122.42583],{icon: baseballPin}).addTo(myMapObject).bindPopup('<b>San Francisco</b> produces the most baseball players in <b>California</b>, which produces the most baseball players in the United States')
+
+var totalAthletePin = L.icon({
+  iconUrl: 'totalAthletePin.png',
+  iconSize:     [30, 30], // size of the icon
+  iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+  popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
+});
+let totalAthleteMarker = L.marker([38.9072, -77.0369],{icon: totalAthletePin}).addTo(myMapObject).bindPopup('<b>Washington</b> produces the most total players per 100,000 residents in the United States.')
+
+var pins = L.layerGroup([footballMarker,basketballMarker,hockeyMarker,baseballMarker,totalAthleteMarker])
+
+var overlayMaps ={
+  "Sport Icon Pins":pins
+}
+
+L.control.layers(basemaps,overlayMaps).addTo(myMapObject)
 
 function stateStyles (feature) {
   let totalPlayers = feature.properties.TOTAL_PLAYERS // get the current state's Median Age attribute
